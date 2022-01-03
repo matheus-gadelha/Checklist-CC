@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist - Cirúrgia Segura</title>
+
+  <link rel="stylesheet" type="text/css" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <link rel="shortcut icon" href="css/imgs/hrsc.ico" >
+  
+  <script src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.5.1.js "></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <script type="text/javascript" src="js/form_names.js"></script>
+  <script type="text/javascript" src="js/show_values.js"></script>
+  <script type="text/javascript" src="js/add_equipe.js"></script>
+  <script type="text/javascript" src="JQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
+
+<!--Barra de progresso-->
+<script type="text/javascript">
+
+	$(function(){
+		$("#btn_add").click(function(e){
+			e.preventDefault();
+		});
+	});
+
+	$(function(){
+		$("#rm").click(function(e){
+			e.preventDefault();
+		});
+	});
+
+	/* Função desativada
+	function hora(event){
+
+		var horario = new Date();
+
+		var hora = horario.getHours();
+		var min = horario.getMinutes();
+
+		document.getElementById("horario").value = hora+"h:"+min+"min";
+	}
+	*/
+
+</script>
+
+ </head>
+ <body>
+
+	<div class="progressbar-container fixed-top">
+		<span class="progress-bar"></span>
+	</div>
+
+ 	<div class="container-fluid" id="content">
+ 		
+ 		<!--
+ 		<img src="css/imgs/wall.jpg" width="100%" style="border-radius: 2rem;">
+		-->
+		
+
+ 		<form id="form" method="POST">
+
+
+			<h2 style="text-align: center;">CHECKLIST DE CIRURGIA SEGURA</h2> 
+
+ 			<!--
+				 <div class="row header">
+
+				<div class="col-1">
+					<img src="css/imgs/isgh_logo.png" width="110%" alt="">
+				</div>
+
+				<div class="col">
+					<h2 style="text-align: center;">CHECKLIST DE CIRURGIA SEGURA</h2> 
+				</div>
+
+				<div class="col-1">
+					<img src="css/imgs/hrsc_logo.png" width="100%" style="margin-left: 5%;" alt="">
+				</div>
+
+			</div>
+			 -->
+
+ 			<br>
+
+			<div class="row blur" style="display: none;">
+				
+			</div>
+
+	 		<div class="row blur">
+	 			<h5>ADMISSÃO NO CENTRO CIRÚRGICO (ANTES DA INDUÇÃO ANESTÉSICA)</h5>
+	 					
+	 				<div class="row">
+
+	 					<h5 id="title_idt">Identificação</h5>
+	 					<div class="mb-3">
+	 						<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="idt" name="idt">
+							  <label class="form-check-label" for="idt">
+							    Sim
+							  </label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_proc_cirur">Local da cirúrgia</h5>
+	 					<div class="mb-3">
+	 						<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="proc_cirur" name="proc_cirur">
+							  <label class="form-check-label" for="proc_cirur">
+							    Sim
+							  </label>
+							</div>
+	 					</div>
+	 					
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_nome_cirur">Nome do Cirurgião</h5>
+	 					<div class="mb-3">
+	 						<div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="nome_cirur" name="nome_cirur">
+							  <label class="form-check-label" for="nome_cirur">
+							    Sim
+							  </label>
+							</div>
+	 					</div>
+	 					
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_termo">Termos de Consetimento Assinados</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline teste">
+							  <input class="form-check-input" type="radio" id="radio_termo1" name="radio_termo" value="1" required>
+							  <label class="form-check-label" for="radio_termo1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline teste">
+							  <input class="form-check-input" type="radio" id="radio_termo2" name="radio_termo" value="0" required>
+							  <label class="form-check-label" for="radio_termo2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_tvp">Profilaxia TVP</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" id="sim-tvp" type="radio" name="radio_tvp" value="1" required>
+							  <label class="form-check-label" for="sim-tvp">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" id="nao-tvp" type="radio" name="radio_tvp" value="0" required>
+							  <label class="form-check-label" for="nao-tvp">Não</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" id="nd-tvp" type="radio" name="radio_tvp" value="2" required>
+							  <label class="form-check-label" for="nd-tvp">Não se Aplica</label>
+							</div>
+
+							<br>
+
+							<div id="hr_tvp" style="display: none;">
+								<label>Entrada na Sala: </label>
+								<input type="text" autocomplete="off" class="ipt-text" id="hr-tvp" name="hr_tvp" placeholder="00:00" style="margin-top: .5%">
+							</div>
+
+	 					</div>
+
+	 				</div>
+	 		</div>
+
+	 		<div class="row blur">
+	 			<h5>ANESTESIOLOGISTA VERIFICA EQUIPAMENTOS DE ANESTESIA E MONITORIZAÇÃO</h5>
+
+
+	 			<div class="row">
+
+					<h5 id="title_anestesica">Consulta Pré-Anestésica</h5>
+					
+					<div class="mb-3">
+						 <div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" id="radio_anestesica1" name="radio_anestesica" value="1" required>
+						  <label class="form-check-label" for="radio_anestesica1">Sim</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" id="radio_anestesica2" name="radio_anestesica" value="0" required>
+						  <label class="form-check-label" for="radio_anestesica2">Não</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" id="radio_anestesica3" name="radio_anestesica" value="2" required>
+						  <label class="form-check-label" for="radio_anestesica3">Não se Aplica</label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+
+	 					<h5 id="title_via_aerea">Material de via aérea</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_via1" name="radio_via" value="1" required>
+							  <label class="form-check-label" for="radio_via1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_via2" name="radio_via" value="0" required>
+							  <label class="form-check-label" for="radio_via2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_anestesia">Aparelho de anestesia</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_anestesia1" name="radio_anestesia" value="1" required>
+							  <label class="form-check-label" for="radio_anestesia1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_anestesia2" name="radio_anestesia" value="0" required>
+							  <label class="form-check-label" for="radio_anestesia2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_motorizacao">Motorização adequada</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_motorizacao1" name="radio_motorizacao" value="1" required>
+							  <label class="form-check-label" for="radio_motorizacao1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_motorizacao2" name="radio_motorizacao" value="0" required>
+							  <label class="form-check-label" for="radio_motorizacao2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_via_dificil">Via aérea difícil prevista?</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_viadificil1" name="radio_viadificil" value="1" required>
+							  <label class="form-check-label" for="radio_viadificil1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_viadificil2" name="radio_viadificil" value="0" required>
+							  <label class="form-check-label" for="radio_viadificil2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_equipamento">Equipamento disponível</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_equipamento1" name="radio_equipamento" value="1" required>
+							  <label class="form-check-label" for="radio_equipamento1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_equipamento2" name="radio_equipamento" value="0" required>
+							  <label class="form-check-label" for="radio_equipamento2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_alergia">Paciente possui alergia conhecida</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="sim-alergia" name="radio_alergia" value="1" required>
+							  <label class="form-check-label" for="sim-alergia">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="nao-alergia" name="radio_alergia" value="0" required>
+							  <label class="form-check-label" for="nao-alergia">Não</label>
+							</div>
+
+							<input type="text" autocomplete="off" class="ipt-text" placeholder=" Qual?" style="display: none; width: 15rem" id="alergia" name="alergia_conhecida">
+
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_perda_sangue">Risco de perda sanguínea >500ml (7ml/kg em crianças)</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_risco1" name="radio_risco" value="1" required>
+							  <label class="form-check-label" for="radio_risco1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_risco2" name="radio_risco" value="0" required>
+							  <label class="form-check-label" for="radio_risco2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_nausea">Risco de naúseas e vômitos</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_nausea1" name="radio_nausea" value="1" required>
+							  <label class="form-check-label" for="radio_nausea1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_nausea2" name="radio_nausea" value="0" required>
+							  <label class="form-check-label" for="radio_nausea2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_hipotermia">Risco de hipotermia</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_hipotermia1" name="radio_hipotermia" value="1" required>
+							  <label class="form-check-label" for="radio_hipotermia1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_hipotermia2" name="radio_hipotermia" value="0" required>
+							  <label class="form-check-label" for="radio_hipotermia2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_delirium">Risco de delirium</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_delirium1" name="radio_delirium" value="1" required>
+							  <label class="form-check-label" for="radio_delirium1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_delirium2" name="radio_delirium" value="0" required>
+							  <label class="form-check-label" for="radio_delirium2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_acesso">Acesso endovenoso adequado</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_acesso1" name="radio_acesso" value="1" required>
+							  <label class="form-check-label" for="radio_acesso1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_acesso2" name="radio_acesso" value="0" required>
+							  <label class="form-check-label" for="radio_acesso2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_sangue">Solicitado reserva/ tipagem sanguínea</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_sangue1" name="radio_sangue" value="1" required>
+							  <label class="form-check-label" for="radio_sangue1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_sangue2" name="radio_sangue" value="0" required>
+							  <label class="form-check-label" for="radio_sangue2">Não</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_sangue3" name="radio_sangue" value="2" required>
+							  <label class="form-check-label" for="radio_sangue3">Não se Aplica</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_sitio">Sítio Marcado (LATERALIDADE)</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_sitio1" name="radio_sitio" value="1" required>
+							  <label class="form-check-label" for="radio_sitio1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_sitio2" name="radio_sitio" value="0" required>
+							  <label class="form-check-label" for="radio_sitio2">Não</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_sitio3" name="radio_sitio" value="2" required>
+							  <label class="form-check-label" for="radio_sitio3">Não se Aplica</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_tricotomia">Tricotomia</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="sim_tricotomia" name="radio_tricotomia" value="1" required>
+							  <label class="form-check-label" for="sim_tricotomia">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="nao_tricotomia" name="radio_tricotomia" value="0" required>
+							  <label class="form-check-label" for="nao_tricotomia">Não</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="nd_tricotomia" name="radio_tricotomia" value="2" required>
+							  <label class="form-check-label" for="nd_tricotomia">Não se Aplica</label>
+							</div>
+
+							<br>
+
+							<input type="text" autocomplete="off" class="ipt-text" name="hr_tricotomia" placeholder="00:00" id="hr_tricotomia" style="display: none; margin-top: .5%">
+
+							<div id="tricotomia_domicilio" style="display: none; margin-top: .5%">
+								
+		 						<div class="form-check form-switch">
+								  <input class="form-check-input" id="check_domicilio" type="checkbox" name="outro">
+								  <label class="form-check-label" for="check_domicilio">
+								    Domicílio
+								  </label>
+
+								  <input type="text" autocomplete="off" class="ipt-text" name="hr_domicilio_tricotomia" placeholder="00:00" id="hr_domicilio_tricotomia" style="display: none;">
+
+								</div>
+
+							</div>
+
+
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_hr_malto">Hora da maltodexitrina</h5>
+	 					
+	 					<div class="mb-3">
+	 						<input type="text" autocomplete="off" class="ipt-text" id="hr-maltodexitrina"  placeholder="00:00" name="hr_maltodexitrina" required>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+	 					
+	 					<h5 id="title_hr_entrada">Hora da entrada na sala</h5>
+	 					
+	 					<div class="mb-3">
+	 						<input type="text" autocomplete="off" class="ipt-text" id="hr-entrada"  placeholder="00:00" name="hr_entrada" required>
+	 					</div>
+
+
+	 					<!--
+	 					<div class="mb-3">
+	 						<button class="btn btn-primary" id="btn-hr" onclick="hora()">Entrada na Sala</button>
+	 						<input type="text" autocomplete="off" style="width: 5.1rem" id="horario" placeholder="00h:00min" name="horario" disabled>
+	 					</div>
+	 					-->
+	 				</div>
+
+	 		</div>
+
+	 		<div class="row blur">
+	 			<h5>TEMPO DE PREPARO (ANTES DA INCISÃO CUTÂNEA)</h5>
+
+	 			<div class="row">
+
+	 					<h5 id="title_cirurgioes">Apresentam-se pelos nomes  -  Cirurgiões</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_cirurgiao1" name="radio_cirurgiao" value="1" required>
+							  <label class="form-check-label" for="radio_cirurgiao1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_cirurgiao2" name="radio_cirurgiao" value="0" required>
+							  <label class="form-check-label" for="radio_cirurgiao2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_anestesiologista">Apresenta-se pelo nome -  Anestesiologista</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_anestesiologista1" name="radio_anestesiologista" value="1" required>
+							  <label class="form-check-label" for="radio_anestesiologista1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_anestesiologista2" name="radio_anestesiologista" value="0" required>
+							  <label class="form-check-label" for="radio_anestesiologista2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_enfermagem">Apresentam-se pelos nomes -  Equipe de Enfermagem</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_enfermeiro1" name="radio_enfermeiro" value="1" required>
+							  <label class="form-check-label" for="radio_enfermeiro1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_enfermeiro2" name="radio_enfermeiro" value="0" required>
+							  <label class="form-check-label" for="radio_enfermeiro2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_confirmacao">Confimam verbalmente: identificação do paciente, sítio cirúrgico e procedimento</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_confirmacao1" name="radio_confirmacao" value="1" required>
+							  <label class="form-check-label" for="radio_confirmacao1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_confirmacao2" name="radio_confirmacao" value="0" required>
+							  <label class="form-check-label" for="radio_confirmacao2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 		</div>
+
+	 		<div class="row blur">
+	 			<h5>EVENTOS CRÍTICOS PREVISTOS</h5>
+
+	 			<div class="col-4 event-cri">
+	 				
+	 				<h5 class="title">Cirurgião / Anestesiologista</h5>
+
+		 			<div class="row">
+
+	 					<h5 id="title_critica">Etapas críticas previstas</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_critica1" name="radio_critica" value="1" required>
+							  <label class="form-check-label" for="radio_critica1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_critica2" name="radio_critica" value="0" required>
+							  <label class="form-check-label" for="radio_critica2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_dr_cirurgia">Duração prevista da cirurgia</h5>
+	 					
+	 					<div class="mb-3">
+	 						<input type="text" autocomplete="off" class="ipt-text" id="dr-cirurgia" placeholder="00:00" name="duracao_cirur" required>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_perda_sanguinea">Perda sanguinea</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_perdasangue1" name="radio_perdasangue" value="1" required>
+							  <label class="form-check-label" for="radio_perdasangue1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_perdasangue2" name="radio_perdasangue" value="0" required>
+							  <label class="form-check-label" for="radio_perdasangue2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+					 <div class="row">
+
+						<h5 id="title_preo_espec">Preocupações específicas</h5>
+						
+						<textarea class="ipt-text text-anes" placeholder="Digite aqui:" rows="7" id="preo_espec" name="preo_espec" style="resize: none;" required></textarea>
+
+					</div>
+
+	 			</div>
+
+
+	 			<div class="col-3 event-cri" id="enf">
+	 				
+	 				<h5 class="title">Enfermagem</h5>
+
+		 			<div class="row">
+
+	 					<h5 id="title_equipamentos">Equipamentos</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_equipamentos1" name="radio_equipamentos" value="1" required>
+							  <label class="form-check-label" for="radio_equipamentos1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_equipamentos2" name="radio_equipamentos" value="0" required>
+							  <label class="form-check-label" for="radio_equipamentos2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_esterelizacao">Esterelização</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_esteralizacao1" name="radio_esteralizacao" value="1" required>
+							  <label class="form-check-label" for="radio_esteralizacao1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_esteralizacao2" name="radio_esteralizacao" value="0" required>
+							  <label class="form-check-label" for="radio_esteralizacao2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_bisturi">Placa de bisturi</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_bisturi1" name="radio_bisturi" value="1" required>
+							  <label class="form-check-label" for="radio_bisturi1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_bisturi2" name="radio_bisturi" value="0" required>
+							  <label class="form-check-label" for="radio_bisturi2">Não</label>
+							</div>
+	 					</div>
+
+	 				</div>
+
+	 			</div>
+
+	 			<div class="col-4 event-cri">
+	 				<h5 class="title">Antibioticoprofilaxia</h5>
+
+	 				<div class="row">
+
+	 					<div class="mb-3">
+	 						<label id="title_cefazolina">Cefazolina</label>
+	 						<div class="form-check form-switch">
+							  <input class="form-check-input" id="check-cefazolina" type="checkbox" name="cefazolina">
+							  <label class="form-check-label" for="check-cefazolina">
+							    Sim
+							  </label>
+							</div>
+
+							<input type="text" autocomplete="off" class="ipt-text" id="cefazolina" placeholder="Dose:" style="display: none; margin-top: 1%" name="cefazolina">
+
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<div class="mb-3">
+	 						<label id="title_cefuroxina">Cefuroxima</label>
+	 						<div class="form-check form-switch">
+							  <input class="form-check-input" id="check-cefuroxima" type="checkbox" name="cefuroxima">
+							  <label class="form-check-label" for="check-cefuroxima">
+							    Sim
+							  </label>
+							</div>
+
+							<input type="text" autocomplete="off" class="ipt-text" id="cefuroxima" placeholder="Dose:" style="display: none; margin-top: 1%" name="cefuroxima">
+
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<div class="mb-3">
+	 						<label id="title_cefalotina">Cefalotina</label>
+	 						<div class="form-check form-switch">
+							  <input class="form-check-input" id="check-cefalotina" type="checkbox" name="cefalotina">
+							  <label class="form-check-label" for="check-cefalotina">
+							    Sim
+							  </label>
+							</div>
+
+							<input type="text" autocomplete="off" class="ipt-text" id="cefalotina" placeholder="Dose:" style="display: none; margin-top: 1%" name="cefalotina">
+
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<div class="mb-3">
+	 						<label id="title_outro">Outro</label>
+	 						<div class="form-check form-switch">
+							  <input class="form-check-input" id="check-atb" type="checkbox" name="outro">
+							  <label class="form-check-label" for="check-atb">
+							    Sim
+							  </label>
+							</div> 
+
+							<input type="text" autocomplete="off" class="ipt-text" placeholder=" Digitar ATB" id="atb" style="display: none; margin-top: 1%" name="outro_descri">
+
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+
+	 					<h5 id="title_hr_administracao">Hora da Administração</h5>
+	 					
+	 					<div class="mb-3">
+	 						<input type="text" autocomplete="off" class="ipt-text" id="hr-administracao" name="hr_adm"  placeholder="00:00" required>
+	 					</div>
+
+	 				</div>
+
+	 				<div class="row">
+	 				
+	 				<h5 id="title_repeticao">Repetição da dose após 4H ou se perda sanguínea >= 1.500 ml em adulto ou criança >= 20ml/kg</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="sim-rep" name="radio_repeticao" value="1" required>
+							  <label class="form-check-label" for="sim-rep">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="nao-rep" name="radio_repeticao" value="0" required>
+							  <label class="form-check-label" for="nao-rep">Não</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="nd-rep" name="radio_repeticao" value="2" required>
+							  <label class="form-check-label" for="nd-rep">Não se Aplica</label>
+							</div>
+
+							<br>
+
+							<input type="text" autocomplete="off" class="ipt-text" placeholder="00:00" id="rep" style="display: none; margin-top: 1%" name="hr_repeticao">
+
+	 					</div>
+
+	 				</div>
+
+	 			</div>
+
+	 		</div>
+
+	 		<div class="row blur">
+	 			<h5>TRANSOPERATÓRIO (SALA OPERATÓRIA)</h5>
+
+	 			<div class="row">
+
+	 				<h5 id="title_hr_incisao">Hora da incisão cirúrgica:</h5>
+	 				<div class="mb-3">
+	 						
+		 				<input type="text" autocomplete="off" class="ipt-text" id="hr-incisao" name="hr_incisao" placeholder="00:00" required>
+	 				</div>
+	 				
+	 			</div>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_contagem">Contagem de instrumentos correta</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_contagem1" name="radio_contagem" value="1" required>
+							  <label class="form-check-label" for="radio_contagem1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_contagem2" name="radio_contagem" value="0" required>
+							  <label class="form-check-label" for="radio_contagem2">Não</label>
+							</div>
+	 					</div>
+
+	 			</div>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_compressa">Compressas</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_compressa1" name="radio_compressa" value="1" required>
+							  <label class="form-check-label" for="radio_compressa1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_compressa2" name="radio_compressa" value="0" required>
+							  <label class="form-check-label" for="radio_compressa2">Não</label>
+							</div>
+	 					</div>
+
+	 			</div>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_agulhas">Agulhas</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_agulha1" name="radio_agulha" value="1" required>
+							  <label class="form-check-label" for="radio_agulha1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_agulha2" name="radio_agulha" value="0" required>
+							  <label class="form-check-label" for="radio_agulha2">Não</label>
+							</div>
+	 					</div>
+
+	 			</div>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_patologica">Identificação completa da amostra patológica</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_patologica1" name="radio_patologica" value="1" required>
+							  <label class="form-check-label" for="radio_patologica1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_patologica2" name="radio_patologica" value="0" required>
+							  <label class="form-check-label" for="radio_patologica2">Não</label>
+							</div>
+	 					</div>
+
+	 			</div>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_inter">Intercorrências clínicas</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="sim_inter" name="radio_intercorrencia" value="1" required>
+							  <label class="form-check-label" for="sim_inter">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="nao_inter" name="radio_intercorrencia" value="0" required>
+							  <label class="form-check-label" for="nao_inter">Não</label>
+							</div>
+
+							<input type="text" autocomplete="off" class="ipt-text" placeholder=" Qual?" style="display: none; width: 10rem" id="inter-cli" name="inter_cli">
+
+	 					</div>
+
+	 			</div>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_nome_procedimento">Nome do procedimento realizado</h5>
+	 					
+	 					<div class="mb-3">
+	 						
+		 					<input type="text" autocomplete="off" class="ipt-text" id="nome_procedimento" name="nome_procedimento" placeholder=" Digite aqui:" style="width: 15rem" required>
+	 					</div>
+
+	 			</div>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_fim_cirur">Hora do término do ato cirúrgico</h5>
+	 					
+	 					<div class="mb-3">
+		 					<input type="text" autocomplete="off" class="ipt-text" id="fim-cirurgia" name="termino_cirur" placeholder="00:00" required>
+	 					</div>
+
+	 			</div>
+
+	 			<div class="row">
+
+	 				<h5 id="title_revisao">Revisão dos equipamentos</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_revisao1" name="radio_revisao" value="1" required>
+							  <label class="form-check-label" for="radio_revisao1">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="radio_revisao2" name="radio_revisao" value="0" required>
+							  <label class="form-check-label" for="radio_revisao2">Não</label>
+							</div>
+	 					</div>
+
+	 			</div>
+
+	 		</div>
+
+	 		<div class="row blur">
+	 			<h5>SRPA</h5>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_srpa_chegada">Hora de chegada</h5>
+	 					
+	 					<div class="mb-3">
+		 					<input type="text" autocomplete="off" class="ipt-text" id="hr-chegada" name="hr_srpa_chegada" placeholder="00:00" required>
+	 					</div>
+
+	 			</div>
+
+	 			<div class="row">
+	 				
+	 				<h5 id="title_malto_srpa">Hora da maltodexitrina + Whey</h5>
+	 					
+	 					<div class="mb-3">
+	 						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="sim_srpa" name="radio_maltodexitrina" value="1" required>
+							  <label class="form-check-label" for="sim_srpa">Sim</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="nao_srpa" name="radio_maltodexitrina" value="0" required>
+							  <label class="form-check-label" for="nao_srpa">Não</label>
+							</div>
+							<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" id="nd_srpa" name="radio_maltodexitrina" value="2" required>
+							  <label class="form-check-label" for="nd_srpa">Não se Aplica</label>
+							</div>
+
+							<br>
+
+							<input type="text" autocomplete="off" class="ipt-text" placeholder="00:00" id="srpa-mal" style="display: none; margin-top: 1%" name="hr_srpa_maltodexitrina">
+
+	 					</div>
+
+	 			</div>
+
+	 		</div>
+
+			 <div class="row blur">
+				<h5>Equipe</h5>
+
+				<div class="mb-3" style="display: none;">
+					<h6 id="msn"></h6>
+  
+					<button id="btn_add">Adicionar</button>
+					<button id="rm">Remover</button>
+					
+					<div id="equipe">
+						<input type="text" placeholder="Nome:" />
+						<input list="funcao" />
+						<datalist id="funcao">
+						<option value="Cirugião"></option>
+						<option value="Anestesista"></option>
+						<option value="Enfermeiro"></option>
+						</datalist>
+					</div>
+					
+					<div id="linha">
+					</div>
+				</div>
+
+			 </div>
+
+			 <div class="row blur">
+				<h5>Responsável pelo Checklist</h5>
+
+				<div class="mb-3" id="div_responsavel">
+					
+					<input type="text" autocomplete="off" class="ipt-text" id="nome_col" onkeyup="add()" maxlength="50"/>
+
+					<div id="colaborador_responsavel">
+						<p>
+						<label id="responsavel"></label> <br />
+						É o colaborador responsável por este checklist <br /> 
+						Coordenação do CCG <br />
+						(Centro Cirurugico Geral)
+						</p>
+					</div>
+
+				</div>
+
+			 </div>
+
+	 		<div class="row">
+
+	 			<div class="col-md-auto">
+	 				<input type="submit" name="enviar" id="submit" value="Concluir" class="btn btn-lg btn-primary">
+	 			</div>
+	 			
+	 		</div>
+
+	 		<div class="fixed-bottom justify-content-end" id="menu-item">
+	 			
+	 			<div class="row">
+	 				<button class="opt" title="Salvar" id="btn-salvar" onclick="show()" data-bs-toggle="modal" data-bs-target="#confirmacao"><img src="css/imgs/salvar.png" style="width: 2rem"></button>
+	 			</div>
+
+	 			<div class="row">
+	 				<button class="opt" type="button" name="cancelar" title="Cancelar" data-bs-toggle="modal" data-bs-target="#canel"><img src="css/imgs/cancelar.png" style="width: 2rem"></button>
+	 			</div>
+
+	 		</div>
+
+	 		<!--
+	 		<button class="btn btn-lg btn-primary" id="print">Imprimir
+	 			&nbsp<img src="printer.png" width="20" height="20" style="margin-top: -0.2rem">
+	 		</button>
+			-->
+
+
+			<!-- Confirmação de campos -->
+			<div class="modal fade" id="confirmacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-xl">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Deseja salvar somente os campos abaixo?</h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body" id="show_campos">
+			        
+
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-ligth" id="close_modal" data-bs-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary" onclick="getAllNames()">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+			<!-- Cancelamento do Cheklist -->
+			<div class="modal fade" id="canel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Deseja cancelar o Checklist?</h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onClick="window.location.reload()" onclick="reset()">Cancelar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+	 	</form>
+
+ 	</div>
+
+ </body>
+</html>

@@ -1,0 +1,234 @@
+body{
+	background-image: linear-gradient(to bottom, #4BF2B8 , #02F09D, #01C27E);
+}
+
+.header *{
+	display: grid;
+	justify-content: space-around;
+	align-items: center;
+}
+
+
+.ipt-text{
+	border: none; 
+	outline: 0;
+	border-left: 0.5px solid black; 
+	border-bottom: 0.5px solid black; 
+	border-bottom-left-radius: 0.5rem; 
+	border-top-right-radius: 0.5rem;
+	width: 10rem;
+	background-color: #F5F5F5;
+}
+
+.ipt-text:focus{
+	box-shadow: 0 0 .5em;
+	transition: .3s;	
+}
+
+.text-anes{
+	margin-left: 2%;
+}
+
+@media(min-width: 1200px){
+	.text-anes{
+		width: 100%;
+	}
+	
+}
+
+@media(max-width: 1200px){
+	.event-cri{
+		width: 100%;
+		padding-bottom: 1rem;
+	}
+	.text-anes{
+		width: 90%;	
+	}
+
+	#div_responsavel{
+		display: flex;
+		flex-wrap: wrap;
+		place-items: center;
+		justify-content: center;
+		margin-top: 1%;
+		padding-bottom: 1%;
+	}
+
+}
+
+@media(max-width: 480px){
+	#menu-item > div > button > img{
+		margin-top: 20%;
+	}
+
+	h2{
+		font-size: 20px;
+	}
+
+	h5{
+		font-size: 16px;
+	}
+
+	.text-anes{
+		width: 90%;	
+	}
+
+	#submit{
+		margin-top: 2%;
+	}
+
+	body{
+		margin-bottom: 20%;
+	}
+
+}
+
+/*Barra de progresso*/
+.progressbar-container{
+	width: 100%;
+	background-color: transparent;
+	height: 5px;
+	display: block;
+}
+
+.progress-bar{
+	background-color: #017049;
+	width: 0%;
+	display: block;
+	height: inherit;
+}
+
+.title{
+	font-weight: bold;
+}
+
+#horario{
+	margin-left: 0.6rem;
+	width: 3.5rem;
+	height: 2.5rem;
+	margin-top: 1rem;
+	text-align: center;
+}
+
+#content{
+	margin-top: 1%; 
+	margin-bottom: 2%; 
+	padding: 0.5rem; 
+	background-color: #F5F5F5; 
+	border-radius: 1rem;
+	box-shadow:  0 0 2em gray;
+	width: 96%;
+}
+
+#submit{
+	margin-left: 2rem;
+	margin-bottom: 0.8rem;
+}
+
+#cancel{
+	border: 1px solid black;
+}
+
+#print{
+	margin-left: 1rem;
+	margin-top: -1rem;
+}
+
+.blur{
+	padding: 0.2rem;
+	margin-left: 1%;
+	margin-bottom: 2%;
+	width: 98%;
+	box-shadow:  0 0 1em gray;
+	border-radius: 1.3rem;
+}
+
+form{
+	position: relative;
+	margin-top: 0%;
+}
+
+button{
+	margin-top: -0.3rem;
+}
+
+#menu-item *{
+	margin-bottom: 20%;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+#menu-item{
+	align-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	padding-right: 5%;
+	padding-bottom: 5%;
+	width: 10%;
+	margin-left: 88%;
+}
+
+
+#menu-item > div > button > img{
+	margin-top: 20%;
+}
+
+#menu-item > div > button:hover{
+	box-shadow: 0 0 .8em;
+	transition: .6s;
+}
+
+.opt{
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	border: none;
+	box-shadow: 0 0 .6em gray;
+	margin-top: 20%;
+	outline: 0;
+}
+
+
+#close_modal{
+	border: 1px solid black;
+}
+
+
+#show_campos{
+	max-height: 28rem;
+	overflow-y: scroll;
+}
+
+#text_res{
+	display: none;
+}
+
+#colaborador_responsavel{
+	display: flex;
+  	justify-content: center;
+}
+
+p{
+	text-align: center;
+	margin-top: 0;
+}
+
+#nome_col{
+	width: 25rem;
+}
+
+
+#linha{
+	margin-top: 1%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	border: 1px solid black;
+	width: 48rem;
+	height: 11rem; 
+  }
+  
+  #equipe{ 
+	  flex-wrap: wrap;
+	  padding: .5%;
+  }

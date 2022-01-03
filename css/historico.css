@@ -1,0 +1,51 @@
+body{
+	background-image: linear-gradient(to bottom, #4BF2B8 , #02F09D, #01C27E);
+	height: 97vh;
+}
+
+#content{
+	background-color: white;
+	margin-top: 1rem;
+	padding-bottom: .3rem;
+	border-radius: 1rem;
+	box-shadow: 0 0 0.5rem;
+	width: 40%;
+}
+
+@media(max-width: 1000px){
+	#content{
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 30%;
+	}
+}
+
+
+h2{
+	padding-left: .5rem;
+	padding-top:  0.5rem;
+}
+
+#novo{
+	margin-top: .5rem;
+}
+
+#tb-historico{
+	margin: auto;
+	width: 95%;
+	margin-top: .0rem;
+	margin-bottom: 20px;
+}
+
+tbody tr:hover{
+	background-color: #F5F5F5;
+}
+
+button{
+	box-shadow: 0 0 0.2em;
+}
+
+button:hover{
+	box-shadow: 0 0 .6em;
+}
+
